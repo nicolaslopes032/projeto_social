@@ -5,9 +5,21 @@
 }
 
 header{
-    background-color: grey;
+    display: flex;
+    background-color: rgb(0, 78, 0);
+    border-bottom: solid 2px rgb(96, 133, 91);
+    justify-content: space-evenly;
+    padding: 5px 0px 5px 0px;
 }
 
-nav header{
-    justify-items: space-between;
+.ha{
+    padding: 20px 0 0 0;
+    color: white;
+    text-decoration: none;
+    border-bottom: solid 2px white;
+    
+}
+
+#inicio{
+    display: flex;
 }
