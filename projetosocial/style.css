@@ -136,4 +136,15 @@ footer{
 .fa{
     color: black;
     text-decoration: none;
+    display: flex;
+}
+
+.fa div{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 20px;
+}
+
+.space{
+    margin-top: 10px
 }
