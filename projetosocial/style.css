@@ -43,11 +43,20 @@ header{
 #inicio2{
     color: white;
     width: 40%;
-    background-image: linear-gradient(to right bottom, #105231, #60916f);
+    background-image: linear-gradient(to right , #105231, #60916f);
     padding: 40px;
 }
 
-/*Aqui começa o main da página*/
+.inicio3{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+}
+
+
+
+/*Aqui começa o main*/
 
 main{
     padding-top: 30px;
@@ -78,7 +87,7 @@ main{
     text-align: center;
     background-color: #194727;
     color: white;
-
+    padding: 2px;
 }
 
 .block1 p{
@@ -100,7 +109,7 @@ main{
     text-align: center;
     background-color: #194727;
     color: white;
-
+    padding: 2px;
 }
 
 .block p{
@@ -109,6 +118,7 @@ main{
 }
 
 /*Aqui começa o footer*/
+
 footer{
     background-color: rgb(208, 248, 202);
     display: flex;
@@ -126,6 +136,7 @@ footer{
 }
 
 #foot2{
+    display: flex;
     width: 50%;
 }
 
@@ -140,6 +151,7 @@ footer{
 }
 
 .fa div{
+    margin-left: 4px;
     margin-top: auto;
     margin-bottom: auto;
     font-size: 20px;
