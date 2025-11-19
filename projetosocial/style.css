@@ -21,6 +21,11 @@ header{
     
 }
 
+.ha:hover{
+    color: rgb(182, 182, 182);
+    transition-duration: 0.1s;
+}
+
 /*Aqui começa o inicio*/
 
 #inicio{
@@ -112,7 +117,7 @@ main{
 }
 
 .block p{
-    text-align: justify;
+    text-align: center;
     padding: 10px;
 }
 
@@ -160,3 +165,4 @@ footer{
 .space{
     margin-top: 20px
 }
+
