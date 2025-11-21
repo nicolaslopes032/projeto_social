@@ -66,3 +66,40 @@ footer{
 .space{
     margin-top: 20px
 }
+
+
+/*Aqui começa o corpo da página*/
+
+.integrantes{
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.3);
+    border: solid 1px rgb(46, 46, 46);
+    width: 300px; 
+    height: 350px;
+}
+
+.block{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.block img{
+    overflow: hidden ;
+}
+
+.intel{
+    width: 100%;
+}
+
+h2{
+    margin: 0 auto; 
+    text-align: center;
+}
+
+p{
+    padding: 0% 5% 0% 5%;
+    text-align: justify;
+}
