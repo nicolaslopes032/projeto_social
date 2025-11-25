@@ -44,17 +44,29 @@ header{
 
 .intel{
     width: 100%;
+    margin-left: 25px;
 }
 
 h2{
     margin: 0 auto; 
     text-align: center;
+    font-size: 30px;
 }
 
 p{
     padding: 0% 5% 0% 5%;
     text-align: justify;
 }
+
+h3{
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.desc{
+    font-size: 20px;
+}
+
 
 /*Aqui começa o footer*/
 
