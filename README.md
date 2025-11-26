@@ -1,1 +1,1 @@
-Aqui, o conhecimento ganha vida com apenas um clique. Este espaço foi criado para que alunos, professores e toda a comunidade escolar tenham acesso rápido e prático a livros digitais, artigos, revistas, vídeos educativos e ferramentas de estudo — tudo reunido em um único lugar.
+# Aqui, o conhecimento ganha vida com apenas um clique. Este espaço foi criado para que alunos, professores e toda a comunidade escolar tenham acesso rápido e prático a livros digitais, artigos, revistas, vídeos educativos e ferramentas de estudo — tudo reunido em um único lugar.
