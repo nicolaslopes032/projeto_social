@@ -20,20 +20,20 @@
 
     <main>
       <div class="block">
-        <form class="form">
+        <form id="form">
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="Digite seu email" required />
           </div>
           <div class="form-group">
             <label for="password">Senha</label>
-            <input type="password" id="password" placeholder="Digite sua senha" required />
+            <input type="password" id="password" placeholder="Digite sua senha" minlength="6" required />
           </div>
           <button type="submit" class="btn">Cadastrar</button>
       </form>
       <p class="text-bottom">
         Já tem uma conta?
-        <a href="entrar.html">Entrar</a>
+        <a href="entrar.html" type="submit">Entrar</a>
       </p>
       </div>
     </main>

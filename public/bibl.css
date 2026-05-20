@@ -3,6 +3,12 @@
     margin: 0;
 }
 
+html, body{
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
 /*Aqui começa o header*/
 
 header{
@@ -25,21 +31,24 @@ header{
 
 main{
     display: flex;
+    flex-wrap: wrap ;
     justify-content: space-evenly;
     padding: 20px 0px 20px 0px;
-
+    overflow: visible;
 }
 
 .block{
    padding: 10px 10px 10px 10px;
     border: solid black 1px;
     border-radius: 10px;
-    width: 25rem;
-    margin: 0 auto;
+    width: 12rem;
+    margin: 10px;
     box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.3);
     text-align: center;
-    margin-top:20px;
-    margin-bottom: 20px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+
     
 }
 
@@ -53,7 +62,7 @@ footer{
     height: 20%;
     left: 0;
     bottom: 0;
-    position: fixed;
+    position: sticky;
     width: 100%;
     background-color: rgb(208, 248, 202);
     display: flex;
