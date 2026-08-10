@@ -1,72 +1,112 @@
 @charset "UTF-8";
-*{
+* {
     margin: 0;
+    box-sizing: border-box;
 }
 
-html, body{
-    overflow-y: auto;
-    margin: 0;
-    padding: 0;
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 /*Aqui começa o header*/
 
 header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     background-color: rgb(7, 56, 29);
     border-bottom: solid 2px rgb(208, 248, 202);
     justify-content: space-evenly;
-    padding: 5px 0px 5px 0px;
+    align-items: center;
+    padding: 8px 0;
+}
+
+header a img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .ha{
-    padding-top: 15px;
     color: white;
     text-decoration: none;
-    padding-bottom: solid 2px white;
-    
+    font-size: 1rem;
 }
 
 /*Aqui começa o main*/
 
 main{
     display: flex;
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 20px 0px 20px 0px;
+    padding: 7px 0px 20px 0px;
     overflow: visible;
+    flex: 1;
 }
 
+
 .block{
-   padding: 10px 10px 10px 10px;
+    padding: 10px;
     border: solid black 1px;
     border-radius: 10px;
+    height: 24rem;
     width: 12rem;
     margin: 10px;
     box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.3);
     text-align: center;
-    margin-top:10px;
-    margin-bottom: 10px;
     flex-shrink: 0;
-
-    
+    overflow-wrap: break-word;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.block h3 {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
 
+.block p {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.82rem;
+    margin-top: 2px;
+}
 
-
-
+.block:hover{
+    background-color: rgb(168, 210, 140);
+}
 /*Aqui começa o footer*/
 
 footer{
-    height: 20%;
-    left: 0;
-    bottom: 0;
-    position: sticky;
-    width: 100%;
     background-color: rgb(208, 248, 202);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    min-height: 140px;
+    border: none;
+    outline: none;
 }
 
 #foot1{
@@ -104,4 +144,215 @@ footer{
 
 .space{
     margin-top: 20px
+}
+
+/* Configuração do container do formulário */
+  .search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 450px; /* Limita a largura máxima para não esticar demais */
+    margin: 10px auto; /* Centraliza na página */
+    position: relative;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px; /* Deixa as bordas bem arredondadas */
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  /* Estilização do campo de texto */
+  #campo-pesquisa {
+    width: 100%;
+    padding: 14px 20px;
+    padding-right: 20px; /* Espaço para o botão não sobrepor o texto */
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #334155;
+    outline: none; /* Remove a borda padrão do navegador */
+  }
+
+  /* Customização do placeholder (texto de dica) */
+  #campo-pesquisa::placeholder {
+    color: #94a3b8;
+  }
+.block img,
+.book-cover-placeholder {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.book-cover-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(232, 244, 228);
+    border: 1px solid rgb(180, 210, 170);
+    font-size: 42px;
+}
+
+.book-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.status-disponivel {
+    color: rgb(7, 96, 48);
+    background-color: rgb(219, 246, 229);
+}
+
+.status-emprestado {
+    color: rgb(125, 86, 10);
+    background-color: rgb(255, 241, 199);
+}
+
+.status-indisponivel {
+    color: rgb(155, 41, 35);
+    background-color: rgb(255, 224, 220);
+}
+
+/* Fonte especial para o gênero */
+.genero-texto {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    color: #2d6a4f;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+/* ── RESPONSIVIDADE DA BIBLIOTECA ── */
+
+@media (max-width: 768px) {
+    header {
+        padding: 8px 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .ha {
+        font-size: 0.85rem;
+    }
+
+    .search-container {
+        max-width: 95%;
+        margin: 8px auto;
+    }
+
+    main {
+        justify-content: space-around;
+        padding: 10px 8px 20px 8px;
+        gap: 8px;
+    }
+
+    .block {
+        width: calc(50% - 16px);
+        min-width: 140px;
+        margin: 4px;
+        padding: 8px;
+    }
+
+    .block img,
+    .book-cover-placeholder {
+        width: 100%;
+        height: 160px;
+    }
+
+    .block h3 {
+        font-size: 0.85rem;
+        margin-top: 6px;
+    }
+
+    .block p {
+        font-size: 0.78rem;
+        padding: 0 2px;
+    }
+
+    .book-status {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 16px;
+        gap: 8px;
+        align-items: center;
+        min-height: unset;
+    }
+
+    #foot1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    #foot1 img {
+        width: 20%;
+    }
+
+    #foot2 {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 400px) {
+    .block {
+        width: 100%;
+        min-width: unset;
+        max-width: 280px;
+        margin: 4px auto;
+    }
+
+    .block img,
+    .book-cover-placeholder {
+        height: 180px;
+    }
+}
+
+.paginacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px 0;
+    font-family: inherit;
+}
+
+.paginacao button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.paginacao button:hover:not(:disabled) {
+    background: #f0f0f0;
+}
+
+.paginacao button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.paginacao-indicador {
+    font-size: 14px;
+    color: #555;
 }

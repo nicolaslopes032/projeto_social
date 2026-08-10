@@ -1,34 +1,42 @@
-const usernameEl = document.getElementById('email');
-const passwordEl = document.getElementById('password');
+const form = document.getElementById('form-cadastro');
+const mensagem = document.getElementById('mensagem');
 
-document.getElementById('form').addEventListener('submit', (e) => e.preventDefault());
+const apiBaseUrl = window.location.protocol === 'file:'
+  || ['localhost', '127.0.0.1'].includes(window.location.hostname) && window.location.port !== '3000'
+  ? 'http://localhost:3000'
+  : '';
 
-const username = usernameEl.value.trim(); // remove espaços
-  const password = passwordEl.value.trim();
-  let valido = true;
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-errUser.style.display = 'none';
-  errPass.style.display = 'none';
+    const login = document.getElementById('usuario').value.trim().replace(/\s+/g, '');
+    const senha = document.getElementById('password').value.trim().replace(/\s+/g, '');
 
-  // Validação do usuário
-  if (!username) {
-    errUser.style.display = 'block';
-    valido = false;
-  }
+    mensagem.textContent = '';
+    mensagem.classList.remove('erro', 'sucesso');
 
-  // Validação da senha
-  if (!password) {
-    errPass.textContent = 'Campo obrigatório.';
-    errPass.style.display = 'block';
-    valido = false;
-  } else if (password.length < 6) {
-    errPass.textContent = 'Senha muito curta. Mínimo 6 caracteres.';
-    errPass.style.display = 'block';
-    valido = false;
-  }
+    try {
+        const resposta = await fetch(`${apiBaseUrl}/api/registrar`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ login, senha })
+        });
 
-  if (valido) {
-    // Aqui você faz a requisição ao servidor / verifica no banco SQL
-    console.log('Login válido, enviando ao servidor...');
-  }
-
+        if (resposta.ok) {
+            mensagem.textContent = 'Cadastro realizado! Redirecionando...';
+            mensagem.classList.add('sucesso');
+            setTimeout(() => window.location.href = 'entrar.html', 1500);
+        } else if (resposta.status === 409) {
+            mensagem.textContent = 'Esse usuário já existe.';
+            mensagem.classList.add('erro');
+        } else {
+            const erroTexto = await resposta.text();
+            mensagem.textContent = erroTexto || 'Erro ao cadastrar. Tente novamente.';
+            mensagem.classList.add('erro');
+        }
+    } catch (erro) {
+        console.error('Erro:', erro);
+        mensagem.textContent = 'Erro ao conectar com o servidor. Verifique se o servidor está rodando em http://localhost:3000.';
+        mensagem.classList.add('erro');
+    }
+});

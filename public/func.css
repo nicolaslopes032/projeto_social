@@ -1,27 +1,52 @@
 @charset "UTF-8";
 *{
     margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 /*Aqui começa o header*/
 
 header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     background-color: rgb(7, 56, 29);
     border-bottom: solid 2px rgb(208, 248, 202);
     justify-content: space-evenly;
-    padding: 5px 0px 5px 0px;
+    align-items: center;
+    padding: 8px 0;
+}
+
+header a img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .ha{
-    padding-top: 15px;
     color: white;
     text-decoration: none;
-    padding-bottom: solid 2px white;
-    
+    font-size: 1rem;
 }
 
 /*Aqui começa o main*/
+
+main {
+    flex: 1;
+}
+
 .func{
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.3);
@@ -75,8 +100,8 @@ footer{
     display: flex;
     justify-content: space-between;
     height: 20%;
+    
 }
-
 #foot1{
     text-align: center;
     width: 50%;
@@ -112,5 +137,81 @@ footer{
 
 .space{
     margin-top: 20px
+}
+
+/* ── RESPONSIVIDADE ── */
+
+@media (max-width: 768px) {
+    header {
+        padding: 8px 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .ha {
+        font-size: 0.85rem;
+    }
+
+    .block {
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+        padding: 16px 12px;
+        gap: 16px;
+    }
+
+    .func {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        aspect-ratio: 4/5;
+    }
+
+    .intel {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .desc {
+        font-size: 0.95rem;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 16px;
+        gap: 8px;
+        align-items: center;
+    }
+
+    #foot1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    #foot1 img {
+        width: 25%;
+    }
+
+    #foot2 {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
 }
 

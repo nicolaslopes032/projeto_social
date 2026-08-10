@@ -12,39 +12,30 @@
         <img src="img/logosnmenor.png" alt="">
       </a>
       <a class="ha" href="bibl.html">Biblioteca</a>
-      <a class="ha" href="login.html">Login</a>
+      <a class="ha" href="entrar.html">Funcionários</a>
     </header>
-    
-
 
     <main>
       <div class="block">
-         <form class="form">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Digite seu email" required />
-        </div>
-        <div class="form-group">
-          <label for="password">Senha</label>
-          <input type="password" id="password" placeholder="Digite sua senha" required />
-        </div>
-        <button type="submit" class="btn">Entrar</button>
-      </form>
-      <p class="text-bottom">
-        Não tem uma conta?
-        <a href="login.html">Cadastre-se</a>
-      </p>
+        <form class="form" id="form-login">
+          <div class="form-group">
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" placeholder="Digite seu nome de usuário" autocomplete="off" minlength="3" pattern="^\S+$"  required />
+          </div>
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="Digite sua senha" autocomplete="off" minlength="6"  required, oninput="this.value = this.value.replace(/\s/g, '')"/>
+          </div>
+          <p id="mensagem-erro" class="mensagem-erro"></p>
+          <button type="submit" class="btn">Entrar</button>
+        </form>
       </div>
     </main>
 
-
-
-    
     <footer>
       <div id="foot1">
-        <a href="index.html">
-        <img src="img/logo.png" alt=""></a></div>
-
+        <a href="index.html"><img src="img/logo.png" alt=""></a>
+      </div>
       <div id="foot2">
         <div class="footblock">
           <div class="space"></div>
@@ -57,17 +48,17 @@
             <img width="30px" src="img/employeesmenor.png" alt="">
             <div>Funcionários</div>
           </a>
-
         </div>
         <div class="footblock">
           <div class="space"></div>
           <a class="fa" href="https://aluno.seduc.ce.gov.br/" target="_blank" rel="external">
             <img width="30px" src="img/alunoonmenor.png" alt="">
-            <div>Aluno online</div></a>
+            <div>Aluno online</div>
+          </a>
         </div>
-        <div class="space"></div>
       </div>
     </footer>
 
+    <script src="entrar.js"></script>
 </body>
 </html>
